@@ -1,0 +1,21 @@
+version: "2"
+
+services:
+
+  mongodb:
+    container_name: mongo-compose
+    image: mongo:latest
+    ports:
+      - "27016:27017"
+#    volumes:
+#      - /opt/docker/woodstock/mongo:/data/db
+
+  fuseki:
+    depends_on:
+      - mongodb
+    container_name: fuseki-compose
+    image: stain/jena-fuseki:latest
+    ports:
+      - "3031:3030"
+#    volumes:
+#      - /opt/docker/woodstock/jenkins:/var/jenkins_home
