@@ -17,5 +17,7 @@ services:
     image: stain/jena-fuseki:latest
     ports:
       - "3031:3030"
+    environment:
+          - ADMIN_PASSWORD=admin
 #    volumes:
 #      - /opt/docker/woodstock/jenkins:/var/jenkins_home
